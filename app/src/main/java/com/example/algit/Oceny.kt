@@ -32,4 +32,3 @@ class Oceny : AppCompatActivity() {
         return false
     }
 }
-}
