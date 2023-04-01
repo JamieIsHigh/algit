@@ -1,5 +1,6 @@
 package com.example.algit
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -10,18 +11,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         val btn = findViewById<Button>(R.id.button)
         val txt1 = findViewById<EditText>(R.id.editTextTextPersonName)
         val txt2 = findViewById<EditText>(R.id.editTextTextPassword)
         val txtV = findViewById<TextView>(R.id.textView3)
-        val vana1 = txt1.text
-        val vana2 = txt2.text
 
         fun onpress() {
             txtV.text = ""
+            val k = Bundle()
+            k.putString("login", txt1.text.toString())
+            k.putString("haslo", txt2.text.toString())
+            val intent = Intent(this, info::class.java)
+            intent.putExtras(k)
+            startActivity(intent)
         }
         btn.setOnClickListener {
-            if (txt1.text == vana1 || txt2.text == vana2) {
+            if (txt1.text.toString() != "" && txt2.text.toString() != "") {
                 onpress()
             }
             else {
