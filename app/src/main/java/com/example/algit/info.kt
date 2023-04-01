@@ -16,7 +16,7 @@ class info : AppCompatActivity() {
 
         supportActionBar!!.title = k?.getString("login").toString() + " " + k?.getString("haslo").toString()
 
-        findViewById<TextView>(R.id.textView6).text = k?.getString("login").toString() + " " + k?.getString("haslo").toString()
+        findViewById<TextView>(R.id.textView10).text = k?.getString("login").toString() + " " + k?.getString("haslo").toString()
 
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
