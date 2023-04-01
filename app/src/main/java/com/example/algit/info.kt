@@ -12,11 +12,11 @@ class info : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
 
-        val kolekcja = intent.extras
+        val k = intent.extras
 
-        supportActionBar!!.title = kolekcja?.getString("login").toString() + " " + kolekcja?.getString("haslo").toString()
+        supportActionBar!!.title = k?.getString("login").toString() + " " + k?.getString("haslo").toString()
 
-        findViewById<TextView>(R.id.textView6).text = kolekcja?.getString("login").toString()
+        findViewById<TextView>(R.id.textView6).text = k?.getString("login").toString() + " " + k?.getString("haslo").toString()
 
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

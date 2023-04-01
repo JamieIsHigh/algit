@@ -5,11 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 
 class Oceny : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oceny)
+
+        val k = intent.extras
+
+        supportActionBar!!.title = k?.getString("login").toString() + " " + k?.getString("haslo").toString()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
