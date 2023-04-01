@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setIcon(R.drawable.baseline_airplanemode_inactive_24)
 
         val btn = findViewById<Button>(R.id.button)
         val txt1 = findViewById<EditText>(R.id.editTextTextPersonName)

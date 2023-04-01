@@ -5,15 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
 
 class Oceny : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oceny)
 
-        val k = intent.extras
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setIcon(R.drawable.baseline_airplanemode_inactive_24)
 
+        val k = intent.extras
+        val login = k?.getString("login").toString()
+        val haslo = k?.getString("haslo").toString()
+
+        supportActionBar!!.title = login + " " + haslo
         supportActionBar!!.title = k?.getString("login").toString() + " " + k?.getString("haslo").toString()
     }
 

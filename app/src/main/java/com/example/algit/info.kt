@@ -12,11 +12,16 @@ class info : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
 
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setIcon(R.drawable.baseline_airplanemode_inactive_24)
+
         val k = intent.extras
 
-        supportActionBar!!.title = k?.getString("login").toString() + " " + k?.getString("haslo").toString()
+        val login = k?.getString("login").toString()
+        val haslo = k?.getString("haslo").toString()
 
-        findViewById<TextView>(R.id.textView10).text = k?.getString("login").toString() + " " + k?.getString("haslo").toString()
+        supportActionBar!!.title = login + " " + haslo
+        findViewById<TextView>(R.id.textView10).text = login + " " + haslo
 
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
